@@ -1,0 +1,15 @@
+<header >
+  <a routerLink="">
+    <img id="logo" src="../../../assets/Adress_book.png" alt="boom" title="home">
+  </a>
+  <h1>MY ADDRESS BOOK</h1>
+  <img *ngIf="loggedIn" id="login" src="../../../assets/security.png" alt="boom" title="logout" (click)="logout()">
+  <img *ngIf="!loggedIn" id="logout" src="../../../assets/unlocked-padlock.png" alt="boom" title="login" (click)="toggleLogin()">
+
+  <app-login
+  [login]="toggle"
+  (toggleLogin)="updateLogin($event)"
+  (showerror)="displayError($event)"
+  >
+  </app-login>
+</header>

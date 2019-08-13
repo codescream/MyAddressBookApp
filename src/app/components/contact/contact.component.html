@@ -1,0 +1,3 @@
+<p routerLink="contactDetails/{{ contactInfo.id }}">{{ contactInfo.name }}</p>
+<img routerLink="contactDetails/{{ contactInfo.id }}" src="{{ contactInfo.image }}" alt="boom" *ngIf=" contactInfo.image != null ">
+<img routerLink="contactDetails/{{ contactInfo.id }}" src="../../../assets/addpix.png" alt="bam" *ngIf=" contactInfo.image == null ">

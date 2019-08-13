@@ -1,0 +1,49 @@
+#container
+{
+  width: calc(100% - 100px);
+  height: calc(100vh - 180px);
+  background: linear-gradient(rgb(79, 79, 196), rgb(142, 122, 87));
+  padding: 50px;
+  font-family: cursive;
+  text-align: center;
+  /* background: rgba(39, 39, 218, 0.7); */
+}
+#innercontainer
+{
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  margin: 0 auto;
+  top: 100px;
+  /* background: blue; */
+}
+p
+{
+  margin: 0 auto;
+  width: fit-content;
+  font-size: xx-large;
+  padding: 30px 0 10px 0;
+  cursor: pointer;
+}
+#about
+{
+  padding: 5px;
+  font-size: large;
+  background: linear-gradient(white, rgb(117, 115, 115));
+  border-radius: 5px;
+  border: none;
+  width: 60%;
+}
+a
+{
+  text-decoration: none;
+  color: black;
+}
+
+@media screen and (max-width: 640px)
+{
+  #about
+  {
+    width: fit-content;
+  }
+}

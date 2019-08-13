@@ -1,0 +1,44 @@
+div
+{
+  position: absolute;
+  width: 420px;
+  padding-left: 10px;
+  padding-right: 5px;
+  background: rgb(83, 83, 83);
+  height: 50px;
+  right: 10px;
+  top: 17px;
+  z-index: 5;
+  border-radius: 5px;
+  overflow: hidden;
+}
+input, button
+{
+  position: relative;
+  width: 35%;
+  top: 12px;
+  margin-right: 8px;
+  font-size: 80%;
+  border-radius: 2px;
+  border: none;
+  height: 20px;
+}
+button
+{
+  border-radius: 2px;
+  width: 15%;
+  height: 22px;
+  background: linear-gradient(white, rgb(117, 115, 115));
+}
+button:active
+{
+  background: linear-gradient(rgb(117, 115, 115), white);
+}
+
+@media screen and (max-width: 640px)
+{
+  input, button
+  {
+    width: 28%;
+  }
+}

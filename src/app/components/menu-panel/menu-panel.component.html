@@ -1,0 +1,20 @@
+<div *ngIf="loggedIn">
+  <app-address-search id="search"
+  [closeSearch]="closeSearch"
+  ></app-address-search>
+  
+  <a *ngIf="page && page.includes('/contactDetails')" (click)="removeContact()">
+    <div id="addcontactbtn">
+      <i class="fas fa-user-times"></i>
+      &nbsp;
+      <span>Remove Contact</span>
+    </div>
+  </a>
+  <a routerLink="newContact" *ngIf="page == '/newContact' || page == '/contacts'">
+    <div id="addcontactbtn">
+      <i class="fas fa-user-plus"></i>
+      &nbsp;
+      <span>Add Contact</span>
+    </div>
+  </a>
+</div>

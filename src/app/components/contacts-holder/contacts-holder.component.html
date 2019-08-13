@@ -1,0 +1,12 @@
+<ng-container *ngFor="let contact of contacts; let i = index">
+  <div [ngClass]="(i%2 == 0) ? 'originaldiv' : 'otherdiv'">
+    <div id="contact">
+      <p>{{ i + 1 }}.&nbsp;</p>
+      <app-contact
+      [contactInfo]="contact"
+      >
+      </app-contact>
+      <i routerLink="contactDetails/{{ contact.id }}/true" id="edit" class="fas fa-user-edit" title="edit contact"></i>
+    </div>
+  </div>      
+</ng-container>

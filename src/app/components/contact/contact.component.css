@@ -1,0 +1,30 @@
+p
+{
+  position: relative;
+  float: left;
+  width: 40%;
+  margin: 0;
+  line-height: 50%;
+  top: calc(50% - 10px);
+  cursor: pointer;
+  padding: 0;
+}
+img
+{
+  width: 146px;
+  height: 116px;
+  margin-left: 1%;
+  border: 2px solid palegoldenrod;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media(max-width: 640px)
+{
+  p
+  {
+    width: 49%;
+    line-height: 80%;
+    top: calc(50% - 13px);
+  }
+}

@@ -1,0 +1,40 @@
+<fieldset>
+    <h1 *ngIf='!edit'>CONTACT DETAILS</h1>
+    <h1 *ngIf="edit">EDIT CONTACT</h1>
+  <form id="container" (ngSubmit)="updateContact($event)">
+    <div id="contactdetails" *ngIf="address">
+      <div class="contain">
+        <p [ngClass]="(edit)? 'pedit':''">Name:&nbsp;<span *ngIf='!edit'>{{address.name}}</span></p>
+        <input name="name" required [(ngModel)]="name" #namefield="ngModel" class="input" type="text" *ngIf='edit'>
+      </div>
+      <div>
+        <p [ngClass]="(edit)? 'pedit':''">Phone:&nbsp;<span *ngIf='!edit'>{{address.phone}}<a href="tel:{{address.phone}}"><i class="fas fa-phone-square" *ngIf='!edit' title="call contact"></i></a></span></p>
+        <input name="phone" required [(ngModel)]="phone" #phonefield="ngModel" class="input" type="text" *ngIf='edit'>
+      </div>
+      <div class="contain">
+        <p [ngClass]="(edit)? 'pedit':''">Email:&nbsp;<span *ngIf='!edit'>{{(address.email)?address.email:"N/A"}}<a href="mailto:{{address.email}}"><i class="fas fa-envelope-square" *ngIf='!edit' title="email contact"></i></a></span></p>
+        <input name="email" [(ngModel)]="email" class="input" type="text" *ngIf='edit' value="{{(address.email)?address.email:'N/A'}}">
+      </div>
+      <div class="contain">
+        <p [ngClass]="(edit)? 'pedit':''">Address:&nbsp;<span *ngIf='!edit'>{{(address.address)?address.address:"N/A"}}</span></p>
+        <input name="address" [(ngModel)]="addy" class="input" type="text" *ngIf='edit' value="{{(address.address)?address.address:'N/A'}}">
+      </div>
+      <div>
+        <p>Notes:&nbsp;<span *ngIf='!edit'>{{(address.notes)?address.notes:"N/A"}}</span></p>
+        <textarea *ngIf='edit' [(ngModel)]="notes" name="notes" rows="10" placeholder="Enter notes" value="{{(address.notes)?address.notes:'N/A'}}"></textarea>
+      </div>
+    </div>
+    <div id="contactimg" *ngIf="address">
+      <i id="removepixs" class="fas fa-times-circle" title="remove picture" *ngIf="edit" (click)="removePix()"></i>
+      <img src="{{(imagesrc)?imagesrc:(address.image)? address.image:'../../../assets/addpix.png'}}" alt="boom">
+      <input type="hidden" name="originalImg" value="{{ address.image }}">
+      <input name="image" *ngIf='edit' id="photo" #file type="file" accept="image/png, image/jpeg" (change)="handleFile(file.files)">
+      <hr>
+    </div>
+    <div id="buttons">
+      <button id="cancel" *ngIf="edit" (click)="cancelEdit()">Cancel</button>
+      <button id="editsubmit" [disabled]="name.length == 0 || phone.length == 0" *ngIf="edit">Save Changes</button>
+      <button id="editsubmit" *ngIf="!edit" (click)="editContact()">Edit Contact</button>
+    </div>
+  </form>
+</fieldset>

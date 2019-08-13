@@ -1,0 +1,16 @@
+<div id="container" *ngIf="(signedIn == null)">
+  <div id="innercontainer">
+      <p (click)="toggleSignup()" title="toggle signup">REGISTER</p>
+      <app-add-user
+      *ngIf="showSignup">
+      </app-add-user>
+      <a (click)="toggleAbout()">
+        <p title="toggle about">ABOUT MY ADDRESS BOOK</p>
+      </a>
+      <p id="about" *ngIf="showAbout">My Address Book is a project work for the mobile web course taken during my time at triOS College. 
+        It is done using angular 7 using a .net core back-end to fetch and store address and account data through an api that is stored using a mongodb database. 
+        It allows for multiple users who store their data on their distinct login accounts. 
+        Contacts can be called and emailed directly from the app using device email client. 
+        Finally, contact info can be edited, with photos allowed for each contact.</p>
+  </div>
+</div>

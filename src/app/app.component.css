@@ -1,0 +1,21 @@
+#errordiv
+{
+  padding: 10px  10px;
+  position: absolute;
+  margin-left: 50%;
+  width: fit-content;
+  height: fit-content;
+  top: 100px;
+  transform: translate(-50%, 0);
+  /* z-index: 10; */
+  text-align: center;
+  background: linear-gradient(rgb(218, 139, 139), rgb(255, 0, 0));
+  border-radius: 5px;
+  border: none;
+  font-family: cursive;
+}
+#errordiv p
+{
+  position: relative;
+  margin: 0 auto;
+}

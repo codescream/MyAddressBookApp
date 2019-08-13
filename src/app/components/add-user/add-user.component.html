@@ -1,0 +1,6 @@
+<form (ngSubmit)="onSubmit()">
+  <input name="username" #usernamefield="ngModel" [(ngModel)]="username" type="text" placeholder="enter username" required>
+  <input name="password" #passwordfield="ngModel" [(ngModel)]="password" type="password" placeholder="password" required>
+  <button [disabled]="usernamefield.invalid || passwordfield.invalid" type="submit">Signup</button>
+</form>
+<p *ngIf="userexist">User Already Exist!!!</p>

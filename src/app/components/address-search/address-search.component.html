@@ -1,0 +1,12 @@
+<div>
+  <input id="search" #searchfield type="text" placeholder=" Search Contact" (input)="searchTerm(searchfield.value); showList = true; 
+  closeSearch = false" (focus)="onFocus()">
+
+  <ul *ngIf="addresses$" [ngClass]="(closeSearch)?'noshowUL':(showList)?'showUL':'noshowUL'">
+    <a routerLink="contacts/contactDetails/{{ address.id }}" *ngFor="let address of addresses$" (click)="showList = false; searchfield.value = ''">
+      <li>
+        {{address.name}}
+      </li>
+    </a>
+  </ul>
+</div>

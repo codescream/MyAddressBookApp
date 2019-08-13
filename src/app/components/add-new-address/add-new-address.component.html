@@ -1,0 +1,32 @@
+<fieldset>
+  <h1>ADD NEW CONTACT</h1>
+  <form class="form" (ngSubmit)="onSubmit()">
+    <div id="formbody">
+      <label>Name:&nbsp;</label>
+      <input type="text" name="name" required [(ngModel)]="name" #namefield="ngModel" placeholder="Enter name">
+      &nbsp;
+      <label>Phone:&nbsp;</label>
+      <input type="tel" name="phone" required [(ngModel)]="phone" #phonefield="ngModel" placeholder="Enter phone number">
+  
+      <br><br>
+  
+      <label id="email">Email:&nbsp;</label>
+      <input type="email" name="email" [(ngModel)]="email" placeholder="Enter email">
+      &nbsp;
+      <label>Address:&nbsp;</label>
+      <input type="text" name="address" [(ngModel)]="address" placeholder="Enter Address">
+    </div>
+    <br><br>
+    <div id="textarea">
+      <label id="notes">Notes:&nbsp;</label>
+      <textarea name="notes" cols="100" rows="10" [(ngModel)]="notes" placeholder="Enter notes"></textarea>
+      <br><br>
+      <input type="submit" [disabled]="namefield.invalid || phonefield.invalid" value="submit" class="btn">
+    </div>
+    <div id="photos">
+      <img [src]=" (imagesrc)? imagesrc:'../../../assets/photoph.jpg' " alt="upload avatar">
+      <br>
+      <input id="photo" #file type="file" accept="image/png, image/jpeg" (change)="handleFile(file.files)">
+    </div>
+  </form>
+</fieldset>

@@ -1,0 +1,67 @@
+div
+{
+  width: 95%;
+  height: 120px;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 10px;
+  font-size: 2.5vw;
+  font-family: cursive;
+}
+.originaldiv
+{
+  background: cadetblue;
+}
+#contact
+{
+  position: relative;
+  min-height: 20px;
+  top: 0px;
+}
+p
+{
+  position: relative;
+  float: left;
+  width: 60px;
+  margin: 0;
+  padding: 0;
+  line-height: 50%;
+  top: calc(50% - 10px);
+  cursor: pointer;
+}
+
+.otherdiv
+{
+  background: rgb(141, 197, 199);
+}
+
+#edit
+{
+  position: relative;
+  float: right;
+  top: calc(50% - 15px);
+  cursor: pointer;
+  font-size: xx-large;
+}
+#edit:hover
+{
+  color: aqua;
+}
+
+@media(max-width: 640px)
+{
+  div
+  {
+    font-size: 4vw;
+  }
+  #edit
+  {
+    position: absolute;
+    font-size: x-large;
+    right: -5px;
+  }
+  p
+  {
+    width: 35px;
+  }
+}
