@@ -3,7 +3,7 @@
   closeSearch = false" (focus)="onFocus()">
 
   <ul *ngIf="addresses$" [ngClass]="(closeSearch)?'noshowUL':(showList)?'showUL':'noshowUL'">
-    <a routerLink="contacts/contactDetails/{{ address.id }}" *ngFor="let address of addresses$" (click)="showList = false; searchfield.value = ''">
+    <a routerLink="contacts/contactDetails/{{ address.id }}/false" *ngFor="let address of addresses$" (click)="showList = false; searchfield.value = ''">
       <li>
         {{address.name}}
       </li>

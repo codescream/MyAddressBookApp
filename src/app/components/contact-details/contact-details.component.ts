@@ -32,13 +32,20 @@ export class ContactDetailsComponent implements OnInit {
       let edit:boolean;
       this.route.paramMap.subscribe(params => {
         this.id = params.get('id');
-        edit = params.get('edit')? true:false;
+        // edit = params.get('edit')? true:false;
+        edit = (params.get('edit') == "true")? true:false;
+        edit;
       });
       this.addressService.getAddress(this.id).subscribe(address =>{
         this.address = address;
         if(edit)
         {
           this.editContact();
+        }
+        else
+        {
+          this.edit = false;
+          // this.cancelEdit();
         }
       });
     });
