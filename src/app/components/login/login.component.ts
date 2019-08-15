@@ -3,7 +3,8 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 import { UserService } from 'src/app/services/user.service';
 import { global } from '../../models/global'
 import { User } from 'src/app/models/User';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -41,7 +42,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  signIn()
+  signIn(form: NgForm)
   {
     this.login = false;
     this.toggleLogin.emit(this.login);
@@ -50,7 +51,6 @@ export class LoginComponent implements OnInit {
 
     this.userService.getUsers().subscribe(users => {
       userexist = users.find(user => user.username == this.username);
-      
       if(userexist)
       {
         if(userexist.password == this.password)
@@ -65,22 +65,21 @@ export class LoginComponent implements OnInit {
         }
         else
         {
-          //incorrect password
           localStorage.setItem("errormsg", "Incorrect username or password!!!");
           this.showerror.emit(true);
-          
-          // alert("password incorrect!");
+        
+          form.reset();
           return;
         }
       }
       else
       {
-        //no such user exist
         localStorage.setItem("errormsg", "username not found, sign up below!!!");
         this.showerror.emit(true);
-        // alert("username not found!!!");
+        form.reset();
         return;
       }
+      form.reset();
     })
   }
 }

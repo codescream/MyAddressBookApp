@@ -1,6 +1,6 @@
 
 <div [@openClose]="login ? 'open' : 'closed'">
-  <form (ngSubmit)="signIn()">
+  <form #signinForm (ngSubmit)="signIn(signinForm)">
     <input name="username" id="text" type="text" #usernamefield="ngModel" [(ngModel)]="username" placeholder="username" required>
     <input name="password" type="password" #passwordfield="ngModel" [(ngModel)]="password" placeholder="password" required>
     <button type="submit" [disabled]="usernamefield.invalid || passwordfield.invalid">login</button>
